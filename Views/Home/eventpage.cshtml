@@ -1,0 +1,39 @@
+@model Wedding
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>@Model.WedderOne and @Model.WedderTwo's Wedding!</h1>
+            </div>
+            <div class="col-sm-4 text-right">
+                <a href="/dashboard">Dashboard</a> | <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Date: @Model.Date.Value.ToString("MMMM dd, yyyy")</h3>
+                <h3>Address: @Model.Address</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <h4>Guests Attending</h4>
+                <ul>
+                    @foreach(RSVP guest in Model.GuestsAttending)
+                    {
+                        <li>@guest.Guest.FirstName @guest.Guest.LastName</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+@model Wedding
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Plan a Wedding</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="/dashboard">Dashboard</a> | <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <form asp-action="CreateWedding" asp-controller="Home" method="post">
+                    <div class="form-group row">
+                        <span class="col-sm-8 offset-sm-4 text-danger" asp-validation-for="WedderOne"></span>
+                        <label asp-for="WedderOne" class="col-sm-4"></label>
+                        <input asp-for="WedderOne" class="col-sm-8 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <span class="col-sm-8 offset-sm-4 text-danger" asp-validation-for="WedderTwo"></span>
+                        <label asp-for="WedderTwo" class="col-sm-4"></label>
+                        <input asp-for="WedderTwo" class="col-sm-8 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <span class="col-sm-8 offset-sm-4 text-danger" asp-validation-for="Date"></span>
+                        <label asp-for="Date" class="col-sm-4"></label>
+                        <input asp-for="Date" class="col-sm-8 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <span class="col-sm-8 offset-sm-4 text-danger" asp-validation-for="Address"></span>
+                        <label asp-for="Address" class="col-sm-4"></label>
+                        <input asp-for="Address" class="col-sm-8 form-control">
+                    </div>
+                    <div class="form-group row">
+                        <input type="submit" value="Submit!" class="col-sm-4 offset-sm-4 btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
